@@ -147,3 +147,24 @@ const avarageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, avarageAge);
 
 */
+
+// ----------------------------------------------------------------------------------------------------
+// #################### Code Challange #1
+
+/*
+
+const marksWeight = 78;
+const johnsWeight = 92;
+const marksSize = 1.69;
+const jonsSize = 1.95;
+
+const marksBMI = marksWeight / (marksSize ** 2);
+console.log('Marks BMI is' + ' ' + marksBMI);
+
+const johnsBMI = johnsWeight / (jonsSize ** 2);
+console.log('Johns BMI is' + ' ' + johnsBMI);
+
+const markHigherBMI = marksBMI > johnsBMI;
+console.log(marksBMI, johnsBMI, markHigherBMI);
+
+*/
