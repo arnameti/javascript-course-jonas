@@ -305,6 +305,7 @@ if(height) {
 // ----------------------------------------------------------------------------------------------------
 // #################### Equality Operators == VS. ===
 
+/*
 const age = '18';
 if(age === 18) console.log('You just became an adult (strict)');
 
@@ -325,6 +326,30 @@ if(favourite === 23) {
 if(favourite !== 23) {
   console.log('Why not 23?');
 }
+*/
+
+// ----------------------------------------------------------------------------------------------------
+// #################### Basic Boolean Logic
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
 
 
+// if(hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive')
+// } else {
+//   console.log('Somone else should drive...')
+// }
 
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if(hasDriversLicense && hasGoodVision && !isTired) {
+  console.log('Sarah is able to drive')
+} else {
+  console.log('Somone else should drive...')
+}
