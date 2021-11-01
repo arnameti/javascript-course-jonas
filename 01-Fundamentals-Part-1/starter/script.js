@@ -331,6 +331,7 @@ if(favourite !== 23) {
 // ----------------------------------------------------------------------------------------------------
 // #################### Basic Boolean Logic
 
+/*
 const hasDriversLicense = true; // A
 const hasGoodVision = true; // B
 
@@ -353,3 +354,81 @@ if(hasDriversLicense && hasGoodVision && !isTired) {
 } else {
   console.log('Somone else should drive...')
 }
+*/
+
+// ----------------------------------------------------------------------------------------------------
+// #################### Code Challange #3
+
+/*
+const scoreDolphins1 = 96;
+const scoreDolphins2 = 108;
+const scoreDolphins3 = 89;
+const avarageDolphins = (scoreDolphins1 + scoreDolphins2 + scoreDolphins3) / 3;
+console.log(` The score of the Dolphins is ${avarageDolphins}`);
+
+const scoreKoalas1 = 88;
+const scoreKoalas2 = 91;
+const scoreKoalas3 = 110;
+const avarageKoalas = (scoreKoalas1 + scoreKoalas2 + scoreKoalas3) / 3;
+console.log(` The score of the Koalas is ${avarageKoalas}`);
+
+if (avarageDolphins > avarageKoalas) {
+  console.log('Dolphins won')
+} else if (avarageKoalas > avarageDolphins) {
+  console.log('Koalas won');
+} else {
+  console.log('It is a draw');
+}
+*/
+
+// BOUS 1
+
+/* 
+const scoreDolphins1 = 97;
+const scoreDolphins2 = 122;
+const scoreDolphins3 = 101;
+const avarageDolphins = (scoreDolphins1 + scoreDolphins2 + scoreDolphins3) / 3;
+console.log(` The score of the Dolphins is ${avarageDolphins}`);
+
+const scoreKoalas1 = 109;
+const scoreKoalas2 = 95;
+const scoreKoalas3 = 123;
+const avarageKoalas = (scoreKoalas1 + scoreKoalas2 + scoreKoalas3) / 3;
+console.log(` The score of the Koalas is ${avarageKoalas}`);
+
+if (avarageDolphins > avarageKoalas && avarageDolphins >= 100) {
+  console.log('Dolphins won')
+} else if (avarageKoalas > avarageDolphins && avarageKoalas >= 100) {
+  console.log('Koalas won');
+} else if (avarageDolphins === avarageKoalas) {
+  console.log('It is a draw');
+} else {
+  console.log('nobody has won');
+}
+*/
+
+// BONUS 2
+
+/*
+const scoreDolphins1 = 97;
+const scoreDolphins2 = 122;
+const scoreDolphins3 = 101;
+const avarageDolphins = (scoreDolphins1 + scoreDolphins2 + scoreDolphins3) / 3;
+console.log(` The score of the Dolphins is ${avarageDolphins}`);
+
+const scoreKoalas1 = 109;
+const scoreKoalas2 = 95;
+const scoreKoalas3 = 106;
+const avarageKoalas = (scoreKoalas1 + scoreKoalas2 + scoreKoalas3) / 3;
+console.log(` The score of the Koalas is ${avarageKoalas}`);
+
+if (avarageDolphins > avarageKoalas && avarageDolphins >= 100) {
+  console.log('Dolphins won')
+} else if (avarageKoalas > avarageDolphins && avarageKoalas >= 100) {
+  console.log('Koalas won');
+} else if (avarageDolphins === avarageKoalas && avarageDolphins >= 100 && avarageKoalas >= 100) {
+  console.log('It is a draw');
+} else {
+  console.log('nobody has won');
+}
+*/
