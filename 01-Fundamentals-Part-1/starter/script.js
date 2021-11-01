@@ -172,6 +172,7 @@ console.log(marksBMI, johnsBMI, markHigherBMI);
 // ----------------------------------------------------------------------------------------------------
 // #################### Strings and Template Literals
 
+/*
 const firstName = 'Jonas';
 const job = 'teacher';
 const birthYear = 1991;
@@ -192,3 +193,55 @@ lines');
 console.log(`String
 multiple
 lines`);
+*/
+
+// ----------------------------------------------------------------------------------------------------
+// #################### if / else Statements
+
+/*
+const age = 15;
+
+if (age >= 18) {
+  console.log ('Sarah can start driving license');
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah ist too young. Wait another ${yearsLeft} years :)`)
+}
+
+const birthYear = 2012;
+let century;
+
+if(birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(century);
+*/
+
+
+// ----------------------------------------------------------------------------------------------------
+// #################### Code Challange #2
+
+/*
+const marksWeight = 78;
+const johnsWeight = 110;
+const marksSize = 1.69;
+const jonsSize = 1.95;
+
+const marksBMI = marksWeight / (marksSize ** 2);
+// console.log('Marks BMI is' + ' ' + marksBMI);
+
+const johnsBMI = johnsWeight / (jonsSize ** 2);
+// console.log('Johns BMI is' + ' ' + johnsBMI);
+
+const markHigherBMI = marksBMI > johnsBMI;
+// console.log(marksBMI, johnsBMI, markHigherBMI);
+
+if (marksBMI > johnsBMI) {
+  console.log(`Mark's BMI (${marksBMI}) is higher than John's (${johnsBMI})`);
+} else {
+  console.log(`John's BMI (${johnsBMI}) is higher than Marks's (${marksBMI})`);
+}
+*/
