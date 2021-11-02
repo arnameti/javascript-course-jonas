@@ -234,6 +234,7 @@ console.log(total);
 // ----------------------------------------------------------------------------------------------------
 // #################### Introduction to objects
 
+/*
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -264,6 +265,50 @@ jonas['twitter'] = '@jonasschmedtman'
 console.log(jonas);
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and hies best friend is called ${jonas.friends[0]}`);
+*/
 
 
+// ----------------------------------------------------------------------------------------------------
+// #################### Objects Methods
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Stevens'],
+  hasDriversLIcense: false,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // }
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // }
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummery: function() {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriversLIcense ? 'a' : 'no'} driver's license.`
+  }
+  
+}
+
+console.log(jonas.calcAge());
+// console.log(jonas['calcAge'](1991));
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+//Challenge
+// Jonas is a 46year old teacher, and he has a/no DriversLicense.
+
+console.log(jonas.getSummery());
 
