@@ -271,6 +271,7 @@ console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and hies be
 // ----------------------------------------------------------------------------------------------------
 // #################### Objects Methods
 
+
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -312,3 +313,38 @@ console.log(jonas.age);
 
 console.log(jonas.getSummery());
 
+
+// ----------------------------------------------------------------------------------------------------
+// #################### Code Challenge 7
+
+
+
+const bmi1 = {
+  firstName: 'Mark',
+  lastName: 'Miller',
+  mass: 78,
+  height: 1.69,
+  
+  calcBMI: function () {
+   this.bmi = this.mass / (this.height ** 2);
+   return this.bmi;
+  }
+};
+
+const bmi2 = {
+  firstName: 'John',
+  lastName: 'Smith',
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height ** 2);
+    return this.bmi;
+   }
+};
+
+if (bmi1.calcBMI > bmi2.calcBMI) {
+  console.log(`${bmi1.firstName} ${bmi1.lastName}'s BMI(${bmi1.calcBMI()}) is higher than ${bmi2.firstName} ${bmi2.lastName}'s BMI(${bmi2.calcBMI()})`)
+} else {
+  console.log(`${bmi2.firstName} ${bmi2.lastName}'s BMI(${bmi2.calcBMI()}) is higher than ${bmi1.firstName} ${bmi1.lastName}'s BMI(${bmi1.calcBMI()})`)
+}
