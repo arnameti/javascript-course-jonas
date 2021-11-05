@@ -1,3 +1,4 @@
+// Setup
 /*
 let js = "amazing";
 if (js === "amazing") alert("Javascript is FUN");
@@ -71,7 +72,6 @@ console.log(typeof null);
 
 // ----------------------------------------------------------------------------------------------------
 // #################### let, const and var
-
 /*
 let age = 30;
 age = 31;
@@ -81,13 +81,12 @@ const birthYear = 1991;
 
 // const job;
 
-var job = 'programmer';
-job = 'teacher';
+var job = "programmer";
+job = "teacher";
 
-lastName = 'Schmedtmann';
+lastName = "Schmedtmann";
 console.log(lastName);
 */
-
 // ----------------------------------------------------------------------------------------------------
 // #################### Basic Operators
 
@@ -173,12 +172,13 @@ console.log(marksBMI, johnsBMI, markHigherBMI);
 // #################### Strings and Template Literals
 
 /*
-const firstName = 'Jonas';
-const job = 'teacher';
+const firstName = "Jonas";
+const job = "teacher";
 const birthYear = 1991;
 const year = 2037;
 
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+const jonas =
+  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
 console.log(jonas);
 
 const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}`;
@@ -186,9 +186,9 @@ console.log(jonasNew);
 
 console.log(`Just a regular string...`);
 
-console.log('String with \n\
+console.log("String with \n\
 multiple \n\
-lines');
+lines");
 
 console.log(`String
 multiple
@@ -197,21 +197,20 @@ lines`);
 
 // ----------------------------------------------------------------------------------------------------
 // #################### if / else Statements
-
 /*
 const age = 15;
 
 if (age >= 18) {
-  console.log ('Sarah can start driving license');
+  console.log("Sarah can start driving license");
 } else {
   const yearsLeft = 18 - age;
-  console.log(`Sarah ist too young. Wait another ${yearsLeft} years :)`)
+  console.log(`Sarah ist too young. Wait another ${yearsLeft} years :)`);
 }
 
 const birthYear = 2012;
 let century;
 
-if(birthYear <= 2000) {
+if (birthYear <= 2000) {
   century = 20;
 } else {
   century = 21;
@@ -219,8 +218,6 @@ if(birthYear <= 2000) {
 
 console.log(century);
 */
-
-
 // ----------------------------------------------------------------------------------------------------
 // #################### Code Challange #2
 
@@ -230,14 +227,16 @@ const johnsWeight = 110;
 const marksSize = 1.69;
 const jonsSize = 1.95;
 
-const marksBMI = marksWeight / (marksSize ** 2);
-// console.log('Marks BMI is' + ' ' + marksBMI);
+const marksBMI = marksWeight / marksSize ** 2;
+console.log("Marks BMI is" + " " + marksBMI);
 
-const johnsBMI = johnsWeight / (jonsSize ** 2);
-// console.log('Johns BMI is' + ' ' + johnsBMI);
+const johnsBMI = johnsWeight / jonsSize ** 2;
+console.log("Johns BMI is" + " " + johnsBMI);
 
 const markHigherBMI = marksBMI > johnsBMI;
-// console.log(marksBMI, johnsBMI, markHigherBMI);
+console.log(
+  `Mark's BMI (${marksBMI}) - John's BMI (${johnsBMI}) - ${markHigherBMI}`
+);
 
 if (marksBMI > johnsBMI) {
   console.log(`Mark's BMI (${marksBMI}) is higher than John's (${johnsBMI})`);
@@ -248,7 +247,6 @@ if (marksBMI > johnsBMI) {
 
 // ----------------------------------------------------------------------------------------------------
 // #################### Type Conversion and Coercion
-
 
 // type conversion
 /*
@@ -282,25 +280,26 @@ console.log(n);
 /*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
-console.log(Boolean('Jonas'));
-console.log(Boolean({}));
-console.log(Boolean(''));
+console.log(Boolean(""));
+console.log(null);
+
+// console.log(Boolean("Jonas"));
+// console.log(Boolean({}));
 
 const money = 100;
-if(money) {
+if (money) {
   console.log("Don't spend it all ;)");
 } else {
-  console.log("You should get a job!")
+  console.log("You should get a job!");
 }
 
 let height = 0;
-if(height) {
-  console.log('YAY! Height is defined');
+if (height) {
+  console.log("YAY! Height is defined");
 } else {
-  console.log('Height is UNDEFINED');
+  console.log("Height is UNDEFINED");
 }
 */
-
 
 // ----------------------------------------------------------------------------------------------------
 // #################### Equality Operators == VS. ===
@@ -510,4 +509,3 @@ const tip = bill >= 50 && bill <= 300 ? bill * tip15 : bill * tip20;
 
 console.log(`The Bill (${bill}), The tip (${tip}), The total value (${bill + tip})`);
 */
-
