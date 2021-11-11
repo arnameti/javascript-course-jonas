@@ -78,3 +78,55 @@ console.log(y === window.y);
 console.log(z === window.z);
 */
 
+// --------------------------------------------------
+
+console.log(this);
+
+console.log('--------------------------------');
+
+function calcAgeDecl (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+}
+calcAgeDecl(1990);
+
+console.log('--------------------------------');
+
+const calcAge = function(birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+}
+calcAge(1991);
+
+console.log('--------------------------------');
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+}
+calcAgeArrow(1980);
+
+console.log('--------------------------------');
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year)
+  }
+}
+jonas.calcAge();
+
+console.log('--------------------------------');
+
+const matilda = {
+  year: 2017,
+}
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+
+console.log('--------------------------------');
+
+const f = jonas.calcAge;
+f();
