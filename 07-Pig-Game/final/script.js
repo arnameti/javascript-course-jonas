@@ -59,8 +59,8 @@ btnRoll.addEventListener('click', function () {
       currentScore += dice;
       document.getElementById(
         `current--${activePlayer}`
-      ).textContent = currentScore;
-    } else {
+        ).textContent = currentScore;
+      } else {
       // Switch to next player
       switchPlayer();
     }
@@ -96,3 +96,10 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+ 
+const name = (values) => {
+ 
+
+}
+
+

@@ -1,5 +1,7 @@
 'use strict';
 
+/*
+
 // Selecting elements
 const player0EL = document.querySelector('.player--0');
 const player1EL = document.querySelector('.player--1');
@@ -15,7 +17,7 @@ const btnHold = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
 
-// Startin conditions
+// Starting conditions
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -93,3 +95,5 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+
+*/
