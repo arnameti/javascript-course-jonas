@@ -41,8 +41,229 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} ad ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  }
+};
+// #########################################################################################################################################
+
+
+
+
+// ****************************************************************************************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Logical Assignment Operators
+/*
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
 };
 
+const rest2 = { 
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assingment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// or
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+
+// nullish assingment operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+
+// AND assingment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// or
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONUMOUS>';
+
+
+console.log(rest1);
+console.log(rest2);
+*/
+
+// ****************************************************************************************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////
+// THe Nullish Coalescing Operator
+/*
+restaurant.numGuests = 0;
+
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefinded (NOT 0 or '');
+// Only if it is null or undefined, the second operator will be executed
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+
+// ****************************************************************************************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Short Circuiting (&& and ||)
+/*
+console.log('------OR-------');
+// Use any data type, return ANY data type, short-circuiting
+console.log(3||'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+restaurant.numGuests = 23;
+const guests2 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests2);
+
+const guests3 = restaurant.numGuests || 10;
+console.log(guests3);
+
+console.log('------AND-------');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'jonas');
+
+// Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+// or
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
+ 
+
+// ****************************************************************************************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Rest Patterns and Parameters
+/*
+
+// 1) Destructuring
+// Spread, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x)
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+// All right, so let's recap after yet another quiet, long lecture here. So, the spread and rests syntax both look exactly the same
+// but they work in opposite ways depending on where they are used. So the spread operator is used
+// where we would otherwise write values, separated by a comma. On the other hand the rest pattern is basically used
+// where we would otherwise write variable names separated by commas. So, again the rest pattern can be used
+// where we would write variable names, separated by commas and not values separated by commas.
+
+/*
+
+// ****************************************************************************************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////
+// THe Spread Operator (...)
+/*
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Now you might have noticed that the spread operator is actually a bit similar to destructuring,
+// because it also helps us get elements out of arrays. Now, the big difference is that the spread operator
+// takes all the elements from the array and it also doesn't create new variables. And as a consequence, we can only use it
+// in places where we would otherwise write values separated by commas.
+
+// Copy Array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays together
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+
+console.log(...str);
+console.log('J', 'o', 'n', 'a', 's');
+
+// So again, multiple values separated by a comma are usually only expected when we pass arguments into a function,
+// or when we build a new array. So take note of that, because that is important to understand about the spread operator.
+
+// Real world examople
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = {foundIn: 1998, ...restaurant, founder: 'Guiseppe'};
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+*/
+
+
+// ****************************************************************************************************************************************
+/*
+///////////////////////////////////////////////////////////////////////////////////
+// Destrucuring Objects
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -81,6 +302,9 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
+*/
+
+// ****************************************************************************************************************************************
 
 /*
 ///////////////////////////////////////////////////
