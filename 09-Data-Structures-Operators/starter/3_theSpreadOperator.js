@@ -56,42 +56,45 @@ const restaurant = {
 // THe Spread Operator (...)
 
 const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+const badNewArr = [1, 2 , arr[0], arr[1], arr[2]];
 console.log(badNewArr);
-
+// better way
 const newArr = [1, 2, ...arr];
 console.log(newArr);
-
-console.log(...newArr);
 console.log(1, 2, 7, 8, 9);
+console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+const newMenu = [...restaurant.mainMenu]
 console.log(newMenu);
+console.log(...newMenu);
 
 // Now you might have noticed that the spread operator is actually a bit similar to destructuring,
 // because it also helps us get elements out of arrays. Now, the big difference is that the spread operator
 // takes all the elements from the array and it also doesn't create new variables. And as a consequence, we can only use it
 // in places where we would otherwise write values separated by commas.
 
+
 // Copy Array
-
 const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+const mainMenuCopy2 = [...newMenu];
+console.log(mainMenuCopy2);
 
-// Join 2 arrays together
-
+// Join 2 Arrays together
 const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(menu);
+console.log(...menu);
 
 // Iterables: arrays, strings, maps, sets. NOT objects
 const str = 'Jonas';
-const letters = [...str, ' ', 'S.'];
+const letters = [...str, '', 'S.'];
 console.log(letters);
-
 console.log(...str);
 console.log('J', 'o', 'n', 'a', 's');
 
 // So again, multiple values separated by a comma are usually only expected when we pass arguments into a function,
 // or when we build a new array. So take note of that, because that is important to understand about the spread operator.
+
 
 // Real world examople
 const ingredients = [
@@ -100,15 +103,14 @@ const ingredients = [
   // prompt("Let's make pasta! Ingredient 3?"),
 ];
 console.log(ingredients);
-
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant.orderPasta(...ingredients);
 
-//Objects
+// Objects
 const newRestaurant = {foundIn: 1998, ...restaurant, founder: 'Guiseppe'};
 console.log(newRestaurant);
-
 const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+

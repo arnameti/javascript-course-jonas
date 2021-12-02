@@ -52,6 +52,7 @@ const restaurant = {
   }
 };
 
+
 ///////////////////////////////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
 console.log('------OR-------');
@@ -69,7 +70,7 @@ console.log(guests1);
 restaurant.numGuests = 23;
 const guests2 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests2);
-
+// or
 const guests3 = restaurant.numGuests || 10;
 console.log(guests3);
 
@@ -85,3 +86,4 @@ if (restaurant.orderPizza) {
 }
 // or
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+

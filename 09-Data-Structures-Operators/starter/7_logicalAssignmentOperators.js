@@ -53,36 +53,46 @@ const restaurant = {
 };
 
 /////////////////////////////////////////////////////////////////////////
+
 // Logical Assignment Operators
 
 const rest1 = {
   name: 'Capri',
-  // numGuests: 20,
-  numGuests: 0,
-};
+  numGuests: 20,
+}
 
 const rest2 = {
   name: 'La Piazza',
   owner: 'Giovanni Rossi',
-};
+}
 
 // OR assingment operator
-// rest1.numGuests = rest1.numGuests || 10;
-// rest2.numGuests = rest2.numGuests || 10;
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+console.log(rest1.numGuests);
+console.log(rest2.numGuests);
 // or
-// rest1.numGuests ||= 10;
-// rest2.numGuests ||= 10;
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+console.log(rest1.numGuests);
+console.log(rest2.numGuests);
+
 
 // nullish assingment operator
-// rest1.numGuests ??= 10;
-// rest2.numGuests ??= 10;
+rest2.numGuests = 0;
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+console.log(rest1.numGuests);
+console.log(rest2.numGuests);
 
 // AND assingment operator
-// rest1.owner = rest1.owner && '<ANONYMOUS>';
-// rest2.owner = rest2.owner && '<ANONYMOUS>';
-// or
-rest1.owner &&= '<ANONYMOUS>';
-rest2.owner &&= '<ANONUMOUS>';
-
+rest1.owner = rest1.owner && 'ANONYMOUS';
+rest2.owner = rest2.owner && 'ANONYMOUS';
 console.log(rest1);
 console.log(rest2);
+// or
+rest1.owner &&= 'ANONYMOUS';
+rest2.owner &&= 'ANONYMOUS';
+console.log(rest1);
+console.log(rest2);
+

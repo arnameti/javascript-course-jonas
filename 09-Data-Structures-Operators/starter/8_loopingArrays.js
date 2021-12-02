@@ -52,45 +52,29 @@ const restaurant = {
   },
 };
 
-/////////////////////////////////////////////////////////////////
-// Destrucuring Objects
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sale, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+console.log('---------------------------------');
 
-restaurant.orderDelivery({ address: 'Via del Sale, 21', starterIndex: 1 });
+for (const item of menu) console.log(item);
 
-const {name, openingHours, categories} = restaurant;
-console.log(name);
-console.log(openingHours);
-console.log(categories);
+console.log('---------------------------------');
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags
-} = restaurant;
-console.log(restaurantName);
-console.log(hours);
-console.log(tags);
+for (const item of menu.entries()) console.log(item);
 
-// Defualt values
-const {menu = [], starterMenu: starters = []} = restaurant;
-console.log(menu, starters);
+console.log('---------------------------------');
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = {a: 23, b: 7, c: 14};
-({a, b} = obj);
-console.log(a, b);
+console.log([...menu.entries()]);
 
-//Nested objects
-const {
-  fri: {open: o, close: c},
-} = openingHours;
-console.log(o, c);
+console.log('---------------------------------');
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+console.log('---------------------------------');
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
