@@ -212,37 +212,37 @@ console.log('Me', me);
 */
 
 // Primitive types
-let lastName = 'Williams';
-let oldName = lastName;
-lastName = 'Davis';
-console.log(lastName, oldName);
+// let lastName = 'Williams';
+// let oldName = lastName;
+// lastName = 'Davis';
+// console.log(lastName, oldName);
 
 // reference types
-const jessica = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
-  age: 27,
-};
+// const jessica = {
+//   firstName: 'Jessica',
+//   lastName: 'Williams',
+//   age: 27,
+// };
 
-const marriedJessica = jessica;
-marriedJessica.lastName = 'Davis';
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davis';
 
-console.log('Before marrieage:', jessica);
-console.log('After marriage:', marriedJessica);
+// console.log('Before marrieage:', jessica);
+// console.log('After marriage:', marriedJessica);
 
-// Copying Objects
-const jessica2 = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
-  age: 27,
-  family: ['Alice', 'Bob'],
-};
+// // Copying Objects
+// const jessica2 = {
+//   firstName: 'Jessica',
+//   lastName: 'Williams',
+//   age: 27,
+//   family: ['Alice', 'Bob'],
+// };
 
-const jessicaCopy = Object.assign({}, jessica2);
-jessicaCopy.lastName = 'Davis';
+// const jessicaCopy = Object.assign({}, jessica2);
+// jessicaCopy.lastName = 'Davis';
 
-jessicaCopy.family.push('Mary');
-jessicaCopy.family.push('John');
+// jessicaCopy.family.push('Mary');
+// jessicaCopy.family.push('John');
 
-console.log('Before marrieage:', jessica2);
-console.log('After marriage:', jessicaCopy);
+// console.log('Before marrieage:', jessica2);
+// console.log('After marriage:', jessicaCopy);

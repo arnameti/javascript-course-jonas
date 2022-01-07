@@ -49,9 +49,8 @@ const restaurant = {
   orderPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-  }
+  },
 };
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Rest Patterns and Parameters
@@ -67,14 +66,20 @@ console.log(a);
 console.log(b);
 console.log(others);
 
-const [pizza, , risotto, ...otherFood] = [
+console.log('--------------------------------------------');
+
+const [pizza, risotto, ...otherFood] = [
   ...restaurant.mainMenu,
   ...restaurant.starterMenu,
 ];
-console.log(pizza, risotto, otherFood);
+console.log(pizza);
+console.log(risotto);
+console.log(otherFood);
+
+console.log('--------------------------------------------');
 
 // Objects
-const {sat, ...weekdays} = restaurant.openingHours;
+const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
 
 // 2) Functions
@@ -88,7 +93,7 @@ add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 4);
 
 const x = [23, 5, 7];
-add(...x)
+add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');

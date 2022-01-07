@@ -1,4 +1,4 @@
-"use strict"
+'use strict';
 
 const game = {
   team1: 'Bayern Munich',
@@ -41,49 +41,77 @@ const game = {
   },
 };
 
+// // 1 - Destructering Arrays
+// const [players1, players2] = game.players;
+// console.log(players1);
+// console.log(players2);
 
-// 1 - Destructering Arrays
+// // 2
+// const [gk, ...fieldPlayers] = game.players[0];
+// // or
+// // const [gk, ...fieldPlayers] = players1;
+// console.log(gk);
+// console.log(fieldPlayers);
+
+// // 3 - spread Operator
+// const allPlayers = [...game.players[0], ...game.players[1]];
+// // or
+// // const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+// // 4 - spread Operator
+// const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...game.players[0]];
+// console.log(players1Final);
+
+// // 5 - nested destructering
+// const {odds: {team1, x: draw, team2}} = game;
+
+// // 6 - use the spread Operator
+// const printGoals = function(...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals('Davies', 'Muller');
+// printGoals(...game.scored);
+
+// // 7 - use a logical operator
+// team1 > team2 && console.log('Team 1 is more likely to win');
+// team2 > team1 && console.log('Team 2 is more likely to win');
+
+// 1
 const [players1, players2] = game.players;
 console.log(players1);
 console.log(players2);
 
 // 2
 const [gk, ...fieldPlayers] = game.players[0];
-// or
-// const [gk, ...fieldPlayers] = players1;
 console.log(gk);
 console.log(fieldPlayers);
 
 // 3 - spread Operator
 const allPlayers = [...game.players[0], ...game.players[1]];
-// or
-// const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
 
 // 4 - spread Operator
-const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...game.players[0]];
+const players1Final = [...game.players[0], 'Thiago', 'Couthinho', 'Perisic'];
 console.log(players1Final);
 
 // 5 - nested destructering
-const {odds: {team1, x: draw, team2}} = game;
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
 
+console.log(team1, draw, team2);
 
-// 6 - use the spread Operator
-const printGoals = function(...players) {
+//6
+
+const printGoals = function (...players) {
   console.log(`${players.length} goals were scored`);
 };
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-printGoals('Davies', 'Muller');
-printGoals(...game.scored);
 
+printGoals('a', 'b', 'c', 'd');
 
-// 7 - use a logical operator
+//7 - use a logical operator
+
 team1 > team2 && console.log('Team 1 is more likely to win');
 team2 > team1 && console.log('Team 2 is more likely to win');
-
-
-
-
-
-
-

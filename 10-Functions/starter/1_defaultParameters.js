@@ -2,12 +2,8 @@
 
 const bookings = [];
 
-const createBooking = function (
-  flightNum,
-  numPassengers = 1,
-  price = 199 * numPassengers
-) {
-  // ES 5
+const createBooking = function (flightNum, numPassengers = 1, price = 199 * numPassengers) {
+  // ES5
   // numPassengers = numPassengers || 1;
   // price = price || 199;
 
@@ -16,15 +12,15 @@ const createBooking = function (
     numPassengers,
     price,
   };
+
   console.log(booking);
   bookings.push(booking);
 };
 
 createBooking('LH123');
 createBooking('LH123', 2, 800);
-createBooking('LH123', 2);
+
 createBooking('LH123', 5);
-createBooking('LH12345', undefined, 1000); // setting a paremeter to undefined, is like not setting it.
-
-console.log(bookings);
-
+createBooking('LH123', 4);
+createBooking('LH123', 1000);
+createBooking('LH123', undefined, 1000);

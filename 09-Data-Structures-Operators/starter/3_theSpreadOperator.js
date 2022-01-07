@@ -49,22 +49,23 @@ const restaurant = {
   orderPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-  }
+  },
 };
 
 ////////////////////////////////////////////////////////////
 // THe Spread Operator (...)
 
 const arr = [7, 8, 9];
-const badNewArr = [1, 2 , arr[0], arr[1], arr[2]];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
+
 // better way
 const newArr = [1, 2, ...arr];
 console.log(newArr);
 console.log(1, 2, 7, 8, 9);
 console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu]
+const newMenu = [...restaurant.mainMenu];
 console.log(newMenu);
 console.log(...newMenu);
 
@@ -73,6 +74,7 @@ console.log(...newMenu);
 // takes all the elements from the array and it also doesn't create new variables. And as a consequence, we can only use it
 // in places where we would otherwise write values separated by commas.
 
+console.log('-----------------------------------------------------');
 
 // Copy Array
 const mainMenuCopy = [...restaurant.mainMenu];
@@ -95,22 +97,16 @@ console.log('J', 'o', 'n', 'a', 's');
 // So again, multiple values separated by a comma are usually only expected when we pass arguments into a function,
 // or when we build a new array. So take note of that, because that is important to understand about the spread operator.
 
-
 // Real world examople
-const ingredients = [
-  // prompt("Let's make pasta! Ingredient 1?"),
-  // prompt("Let's make pasta! Ingredient 2?"),
-  // prompt("Let's make pasta! Ingredient 3?"),
-];
+const ingredients = [1, 2, 3];
 console.log(ingredients);
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant.orderPasta(...ingredients);
 
 // Objects
-const newRestaurant = {foundIn: 1998, ...restaurant, founder: 'Guiseppe'};
+const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
 console.log(newRestaurant);
-const restaurantCopy = {...restaurant};
+const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
-

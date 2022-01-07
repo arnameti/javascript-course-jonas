@@ -59,12 +59,12 @@ const restaurant = {
 const rest1 = {
   name: 'Capri',
   numGuests: 20,
-}
+};
 
 const rest2 = {
   name: 'La Piazza',
   owner: 'Giovanni Rossi',
-}
+};
 
 // OR assingment operator
 rest1.numGuests = rest1.numGuests || 10;
@@ -76,7 +76,6 @@ rest1.numGuests ||= 10;
 rest2.numGuests ||= 10;
 console.log(rest1.numGuests);
 console.log(rest2.numGuests);
-
 
 // nullish assingment operator
 rest2.numGuests = 0;
@@ -95,4 +94,3 @@ rest1.owner &&= 'ANONYMOUS';
 rest2.owner &&= 'ANONYMOUS';
 console.log(rest1);
 console.log(rest2);
-

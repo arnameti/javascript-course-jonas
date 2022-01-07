@@ -49,20 +49,19 @@ const restaurant = {
   orderPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-  }
+  },
 };
-
 
 ///////////////////////////////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
 console.log('------OR-------');
 // Use any data type, return ANY data type, short-circuiting
-console.log(3||'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+// console.log(3||'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
@@ -86,4 +85,3 @@ if (restaurant.orderPizza) {
 }
 // or
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
-

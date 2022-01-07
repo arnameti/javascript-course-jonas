@@ -64,7 +64,7 @@ restaurant.orderDelivery({
 
 restaurant.orderDelivery({ address: 'Via del Sale, 21', starterIndex: 1 });
 
-const {name, openingHours, categories} = restaurant;
+const { name, openingHours, categories } = restaurant;
 console.log(name);
 console.log(openingHours);
 console.log(categories);
@@ -72,25 +72,31 @@ console.log(categories);
 const {
   name: restaurantName,
   openingHours: hours,
-  categories: tags
+  categories: tags,
 } = restaurant;
 console.log(restaurantName);
 console.log(hours);
 console.log(tags);
 
 // Defualt values
-const {menu = [], starterMenu: starters = []} = restaurant;
+const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
+console.log(starters);
 
 // Mutating variables
 let a = 111;
 let b = 999;
-const obj = {a: 23, b: 7, c: 14};
-({a, b} = obj);
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
 console.log(a, b);
 
 //Nested objects
+
+const { fri } = restaurant.openingHours;
+console.log(fri);
+
 const {
-  fri: {open: o, close: c},
-} = openingHours;
+  fri: { open: o, close: c },
+} = restaurant.openingHours;
+
 console.log(o, c);
