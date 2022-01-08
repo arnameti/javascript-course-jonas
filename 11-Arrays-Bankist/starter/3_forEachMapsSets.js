@@ -19,3 +19,4 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function(value, _value, map) {
   console.log(`${_value}: ${value}`);
 })
+
