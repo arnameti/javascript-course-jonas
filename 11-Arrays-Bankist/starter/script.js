@@ -79,22 +79,16 @@ const displayMovments = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-
 displayMovments(account1.movements);
 
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
-/*
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-*/
-
-/////////////////// MAP
-
-
+const createUserNames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.user = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUserNames(accounts);
+console.log(accounts);
