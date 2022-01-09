@@ -36,8 +36,8 @@ console.log(accounts);
 // console.log(firstWithdrawal);
 
 // find Method
-// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-// console.log(account);
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
 
 // The same without find-Method
 const filterAccByOwner = function (accs) {
