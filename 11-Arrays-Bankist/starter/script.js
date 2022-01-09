@@ -81,9 +81,9 @@ const displayMovments = function (movements) {
   });
 };
 // --------------------------------------------------------------
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance} EUR`;
 };
 // --------------------------------------------------------------
 const calcDisplaySummery = function (acc) {
@@ -97,11 +97,11 @@ const calcDisplaySummery = function (acc) {
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(out)} EUR`;
 
-  const interest =  acc.movements
-      .filter(mov => mov > 0)
-      .map(deposit => (deposit * acc.interestRate) / 100)
-      .filter(int => int >= 1)
-      .reduce((acc, int) => acc + int, 0);
+  const interest = acc.movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * acc.interestRate) / 100)
+    .filter(int => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest} EUR`;
 };
 // --------------------------------------------------------------
@@ -117,27 +117,62 @@ const createUserNames = function (accs) {
 };
 createUserNames(accounts);
 // --------------------------------------------------------------
+const updateUI = function (acc) {
+  // Display movements
+  displayMovments(acc.movements);
+  // Display balance
+  calcDisplayBalance(acc);
+  // Display summary
+  calcDisplaySummery(acc);
+};
+// --------------------------------------------------------------
 // Event Handler
 let currentAccount;
 
-btnLogin.addEventListener('click', function(e) {
+btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
 
-  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
 
-  if(currentAccount?.pin === Number(inputLoginPin.value)) {
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
     // Clear Inputfield
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
-    // Display UI message
-    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
-    containerApp.style.opacity = 100;
-    // Display movements
-    displayMovments(currentAccount.movements);
-    // Display balance
-    calcDisplayBalance(currentAccount.movements);
-    // Display summary
-    calcDisplaySummery(currentAccount);
+
+    // Updadte UI
+    updateUI(currentAccount);
   }
-})
+});
+// --------------------------------------------------------------
+// Transfer Money
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+
+  inputTransferAmount.value = inputTransferTo.value = '';
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc.username !== currentAccount.username
+  ) {
+    // Doing the Transfer
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    // Updadte UI
+    updateUI(currentAccount);
+  }
+});
