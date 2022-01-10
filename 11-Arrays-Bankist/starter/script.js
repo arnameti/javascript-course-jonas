@@ -61,8 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-// --------------------------------------------------------------
-// Display Movements
+
 const displayMovments = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -83,12 +82,14 @@ const displayMovments = function (movements, sort = false) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-// --------------------------------------------------------------
+
+
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${acc.balance} EUR`;
 };
-// --------------------------------------------------------------
+
+
 const calcDisplaySummery = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
@@ -107,8 +108,8 @@ const calcDisplaySummery = function (acc) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest} EUR`;
 };
-// --------------------------------------------------------------
-// Create USERNAME
+
+
 const createUserNames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -119,7 +120,8 @@ const createUserNames = function (accs) {
   });
 };
 createUserNames(accounts);
-// --------------------------------------------------------------
+
+
 const updateUI = function (acc) {
   // Display movements
   displayMovments(acc.movements);
@@ -128,8 +130,8 @@ const updateUI = function (acc) {
   // Display summary
   calcDisplaySummery(acc);
 };
-// --------------------------------------------------------------
-// Event Handler
+
+
 let currentAccount;
 
 btnLogin.addEventListener('click', function (e) {
@@ -154,8 +156,8 @@ btnLogin.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
-// --------------------------------------------------------------
-// Transfer Money
+
+
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
@@ -179,7 +181,8 @@ btnTransfer.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
-// --------------------------------------------------------------
+
+
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -192,10 +195,10 @@ btnLoan.addEventListener('click', function (e) {
     // Update Ui
     updateUI(currentAccount);
   }
-
   inputLoanAmount.value = '';
 });
-// --------------------------------------------------------------
+
+
 // Close Account - finIndexMethod
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
@@ -217,8 +220,8 @@ btnClose.addEventListener('click', function (e) {
 
   inputCloseUsername.value = inputClosePin.value = '';
 });
-// --------------------------------------------------------------
-// Sorting the movements
+
+
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
