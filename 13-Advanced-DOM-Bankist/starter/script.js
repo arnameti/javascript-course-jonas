@@ -74,3 +74,5 @@ btnScrollTo.addEventListener('click', function (e) {
   // Modern Way
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+
