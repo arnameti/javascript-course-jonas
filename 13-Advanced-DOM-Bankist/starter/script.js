@@ -1,12 +1,14 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
+const message = document.createElement('div');
+const header = document.querySelector('.header');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// MODAL WINDOW
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -30,8 +32,8 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-const message = document.createElement('div');
-const header = document.querySelector('.header');
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BUTTON SCROLLING
 
 message.classList.add('cookie-message');
 message.innerHTML =
@@ -44,7 +46,6 @@ document
     // message.parentElement.removeChild(message);
     message.remove();
   });
-
 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
@@ -74,5 +75,30 @@ btnScrollTo.addEventListener('click', function (e) {
   // Modern Way
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PAGE NAVIGATION
 
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+//   })
+// })
+
+
+// EVENT DELEGATION
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matchin strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
